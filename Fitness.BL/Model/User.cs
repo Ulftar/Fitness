@@ -2,18 +2,46 @@
 
 namespace Fitness.BL.Model
 {
-    class User
+    /// <summary>
+    /// Пользователь.
+    /// </summary>
+    public class User
     {
+        #region Свойства.
+        /// <summary>
+        /// Имя.
+        /// </summary>
         public string Name { get; }
 
+        /// <summary>
+        /// Пол.
+        /// </summary>
         public Gender Gender { get; }
 
+        /// <summary>
+        /// Дата рождения.
+        /// </summary>
         public DateTime BirthDate { get; }
 
+        /// <summary>
+        /// Вес.
+        /// </summary>
         public double Weight { get; set; }
 
+        /// <summary>
+        /// Рост.
+        /// </summary>
         public double Height { get; set; }
+        #endregion
 
+        /// <summary>
+        /// Создать нового пользователя.
+        /// </summary>
+        /// <param name="name"> Имя. </param>
+        /// <param name="gender"> Пол. </param>
+        /// <param name="birthDate"> Дата рождения. </param>
+        /// <param name="weight"> Вес. </param>
+        /// <param name="height"> Рост. </param>
         public User(string name,
                     Gender gender,
                     DateTime birthDate,
@@ -52,6 +80,11 @@ namespace Fitness.BL.Model
             BirthDate = birthDate;
             Weight = weight;
             Height = height;
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }
